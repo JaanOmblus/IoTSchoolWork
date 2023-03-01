@@ -1,0 +1,54 @@
+Marek and Jaan with story:
+
+Story is important way to present one's idea, so that even programmer could understand the point.
+
+Thus the story is following:
+
+Company has scale which is being used by truck's to measure the load weight.
+
+The scale is manually operated, meaning that the scale reading is displayed on the wall and truck driver has to go out from the truck to write it down.
+The truck driver has to go out two times, on empty truck and of fully loaded truck, to get the two respective readings.  Truck driver writes scale readings
+on paper and thus substracts one from another.  Truck driver is not excellent in math and could make mistakes.  In addition Estonian cold climate makes 
+unconfortable to come out from the truck cabin and to write down the readings.
+
+From business perspective the system could be precise, efficient and elliminate any potential user errors (user defined among other thing is truck driver).
+
+So to make truck driver life easier, to raise social wellbeing level ot truck driver the system has to become automatic.
+
+Therefore there would be needed solution, physical and software solution, to connect the scale to information system.
+
+For being reasonable, this is essential to build small model, to use small toy truck, to see how this stuff works out.
+
+SO THE STORY COMES LIKE THIS (PRESENT STATE):
+
+1. Happy and tired truck driver goes to bring the next load of the material.  
+2. Truck driver has to get the weight of empty truck.
+3. Truck driver drives on the scale.
+4. Truck driver goes out of the cabin, walks to the wall and writes down the reading.
+5. Truck driver goes to pick up the material.
+6. Truck driver drives on the scale with fully loaded truck.
+7. Truck driver goes out of the cabin, walks to the wall and writes down the reading.
+8. Truck driver makes the calculation: substracts empty truck weight from fully loaded truck weight.
+9. Truck driver makes his way to deliver the load.
+
+STORY FOR THE STATE WE WANT TO ACHIEVE:
+
+1. Happy and tired truck driver goes to bring the next load of the material.  
+2. Truck driver has to get the weight of empty truck.
+3. Truck driver drives on the scale.
+4. Truck driver picks up the phone and runs the respective webpage.
+5. Truck driver sees his opened waybill and confirms the empty weight.
+6. Truck driver goes to pick up the material.
+7. Truck driver drives on the scale with fully loaded truck.
+8. Truck driver picks up the phone and runs the respective webpage.
+9. Truck driver sees his opened waybill and confirms the empty weight.
+10. Truck driver makes his way to deliver the load.
+
+PRECONDITIONS
+
+1. Functioning software with respective webpage.
+2. Centrally opened waybill for respective truck driver and respective delivery.
+
+
+Important terms:
+load cell, load cell amplyfier
