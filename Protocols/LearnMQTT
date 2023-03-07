@@ -8,3 +8,17 @@ with a small code footprint and minimal network bandwidth.
 MQTT is the most commonly used messaging protocol for the Internet of Things (IoT).
 MQTT stands for MQ Telemetry Transport. The protocol is a set of rules that defines how IoT devices can publish and subscribe to data over the Internet.
 
+MQTT is fast becoming one of the main protocols for IOT (internet of things) deployments.
+
+Because MQTT clients don’t have addresses like email addresses, phone numbers etc. you don’t need to assign addresses to clients like you do with most messaging systems.
+
+For MQTTv3.1.1 there is client software available in almost all programming languages and for the main operating systems Linux, Windows, Mac from the Eclipse Paho project.
+
+Websockets allows you to receive MQTT data directly into a web browser.
+This is important as the web browser may become the DE-facto interface for displaying MQTT data.
+MQTT websocket support for web browsers is provided by the Javascript MQTT Client.
+
+MQTT supports various authentications and data security mechanisms.
+It is important to note that these security mechanisms are configured on the MQTT broker, and it is up to the client to comply with the mechanisms in place.
+
+
