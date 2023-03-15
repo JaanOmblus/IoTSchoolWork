@@ -1,0 +1,97 @@
+#include <Arduino.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+
+#include "HX711.h"
+
+// HX711 circuit wiring
+const int LOADCELL_DOUT_PIN = 12;
+const int LOADCELL_SCK_PIN = 13;
+
+HX711 scale;
+
+#define LED_PIN BUILTIN_LED
+
+ESP8266WebServer server(80);
+
+// WiFi AP Config
+IPAddress localIp(192,168,1,1);     // veebiaadress
+IPAddress gatewayIp(192,168,1,1);
+IPAddress subnet(255,255,255,0);
+
+const char *ssid="esp8266_swa";     //wifi vorgu nimi
+const char *pwd="swa12345678";      //wifi vorgu parool
+
+
+float Sens;
+
+
+
+// see funktioon saadab meile html lehe
+void handle_home_page()
+{
+  Sens = scale.get_units(); // kaalu poolt moodetud tulemus
+
+  char body[1024]; // siia peale tuleb html leht. 1024 tahte on lubatud sellel
+
+//sprintf kopeerib Sens numbri tekstina ja liidab html lehele 
+
+  sprintf(body, 
+"<html><head><title>ESP8266</title><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>h1 {text-align:center; }td {font-size: 50%; padding-top: 30px;}.temp {font-size:150%; color: #FF0000;}</style></head> <body><div id='div1'><table> <tr><td>Sensor</td><td class='temp'>%.2f</td></tr> </div></body> </html>",
+  Sens);
+  
+  server.send(200, "text/html", body);
+}
+
+
+
+ // see funktsioon paneb ledi toole, teine paneb kustu
+void handle_led_on() {
+  digitalWrite(LED_PIN, HIGH);
+}
+
+void handle_led_off() {
+  digitalWrite(LED_PIN, LOW);
+}
+
+
+
+// programm algab siin
+void setup() {
+
+  Serial.begin(115200); // kui on arvuti uhendatud saab ESP kontroller saata labi seriali meile sonumeid, ja vastupidi
+
+//setup scale
+  Serial.println("HX711 Demo");
+  Serial.println("Initializing the scale");
+  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
+
+  scale.set_scale(1861); // kalib
+  scale.tare(); // nulli
+
+//setup wifi
+  Serial.println("Initializing AP...");
+  if (WiFi.softAP(ssid, pwd)) {
+    Serial.println("AP ready....");
+    WiFi.softAPConfig(localIp, gatewayIp, subnet);
+    delay(200);
+ 
+  }
+  Serial.println("Wifi AP ready...");
+
+
+  server.on("/", handle_home_page);      //kui me oleme pealehel, siis aktiveeri see funtsioon
+  server.on("/led/on", handle_led_on);   //kui laheme pealehe pealt edasi /led/on lehe peale aktiveeritakse see funtsioon
+  server.on("/led/off", handle_led_off);
+  server.begin();
+
+   pinMode(LED_PIN, OUTPUT);
+   digitalWrite(LED_PIN, LOW);
+     
+
+}
+
+void loop() {
+  server.handleClient();
+
+}
