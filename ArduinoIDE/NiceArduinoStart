@@ -1,0 +1,15 @@
+Arduino is very cool thing.
+
+You can use it to program the device.
+
+Steps to do:
+1. Start Arduino.
+2. Take the device.
+3. Connect the device to compurter (usin USB wire - to the USB port).
+4. Write program on Arduino (can use the samples available, if wize, could download some more samples).
+5. Write program to the device (via USB wire - keep it connected).
+6. And you have device with program, good achievement.
+
+Useful info on Arduino could be found here:
+https://www.arduino.cc/en/software
+
