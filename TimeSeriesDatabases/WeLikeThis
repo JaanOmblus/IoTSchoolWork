@@ -1,0 +1,4 @@
+We really like time series databases.
+Timestamp serves as primary key and those databases are optimised over timestamp.
+Mainly we concentrated on InfluxDB as introduced in lecture.
+However we also were trying other options, please refer to photos in this very cataloge.
