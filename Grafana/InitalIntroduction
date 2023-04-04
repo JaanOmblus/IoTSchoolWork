@@ -1,0 +1,11 @@
+Grafana is nice environment and we took a good look at it.
+
+It is different from Node-RED.  As of our understanding of the issue Node-RED connects directly to physical world and enables to combine physical "chips"
+and the virtual environment, creating virtual pieces of the system which we do not have in real life.  Grafana does not do anything like this.  Grafana
+is just to work with data, to visualize those data.  Very nice thing, but it does not replace Node-RED, however could nicely complement in certain setting.
+
+The issue what we do not understand of Node-RED setup in our class is that why the access to the system should be such a tricky one, via Rasberry PI and accepting
+just Delta network.  Why could not it be open to access?  Nice rescource is just blocked from wider usage.  Of course maybe there are other solutions to get
+Node-RED running, other than taken in class, just need to take a look.
+
+Attached some screenshots to the catalog here.
