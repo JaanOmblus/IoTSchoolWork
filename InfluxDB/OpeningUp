@@ -1,0 +1,5 @@
+We really started to investigate time-series databases and in this particular case InfluxDB
+
+Really nice way to arrange relational data in the fashion that primary key is timestamp.  Very logical and efficient way to manage IoT data.
+
+We created small database for ourselves in InfluxDB, just to test it out and practice a bit.  Some screenshots are added to present cataloge.
