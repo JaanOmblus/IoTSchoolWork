@@ -1,0 +1,17 @@
+First we need to undestand what needs to be fixed.
+
+Probably passwords are known to anybody.
+
+Change your passwords.
+
+Introduce business one-paber: list all essentials there.
+
+All passwords and usernames should be listed somewhere so even business person could be able to access the stuff.
+
+Actually this is the nice system, IoTempower, we just dig to find mistakes because we need to fix something.
+
+So the documentation would be helpful, but user case oriented documentation.
+
+General security risks need to be considered.  Man in the middle could attack IoTempower.  Brute force password attack could be present.
+
+Rasberry PI is now open from outside, maybe it should be closed from outside.
